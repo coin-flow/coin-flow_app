@@ -1,27 +1,103 @@
-# React + TypeScript + Vite
+<a name="readme-top"></a>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# coin flow
 
-Currently, two official plugins are available:
+> coin flow app with reaact
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<!-- [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fchan9yu%2Fslack_clone&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com) -->
 
-## Expanding the ESLint configuration
+![License](https://img.shields.io/badge/license-MIT-blue)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<!-- ![Build and Test](https://github.com/chan9yu/slack_clone/actions/workflows/deploy.yml/badge.svg) -->
 
-- Configure the top-level `parserOptions` property like this:
+![](https://dummyimage.com/600x350/e7e7e7/121212)
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+<br />
+
+## 🔗 Link
+
+- ...
+<!-- - <a href="https://chan9yu.github.io/slack_clone" target="_blank" rel="noreferrer">APP</a>
+- <a href="https://chan9yu.github.io/slack_clone/storybook" target="_blank" rel="noreferrer">Storybook</a>
+- <a href="https://github.com/chan9yu/slack_clone_api_server/" target="_blank" rel="noreferrer">Back End Repository</a> -->
+
+<p align="right">
+  <a href="#readme-top">맨 위로</a>
+</p>
+
+## 📖 Features
+
+- ...
+- ...
+- ...
+
+<p align="right">
+  <a href="#readme-top">맨 위로</a>
+</p>
+
+## 🔧 Tech Stack
+
+- <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white">
+- <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+
+<p align="right">
+  <a href="#readme-top">맨 위로</a>
+</p>
+
+## 🚀 Getting Started
+
+로컬환경에서 앱을 실행하는 방법입니다.
+
+### Prerequisites
+
+해당 앱을 실행시키기 위한 필수 조건 입니다.
+
+0. .env.example 기준으로 .env 파일 생성
+
+```shell
+VITE_API_URL=...
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. pnpm install
+
+```
+# pnpm 설치
+npm -g install pnpm
+```
+
+2. node setup
+
+```
+# .nvmrc 기준 node version 설치
+nvm use
+```
+
+### Installation
+
+1. 프로젝트 클론
+
+```shell
+git clone https://github.com/coin-flow/coin-flow_app.git
+```
+
+2. 프로젝트 디렉토리로 이동
+
+```shell
+cd coin-flow_app
+```
+
+3. 종속성 설치
+
+```shell
+pnpm install
+```
+
+4. 개발 서버 시작
+
+```
+pnpm dev
+```
+
+<p align="right">
+  <a href="#readme-top">맨 위로</a>
+</p>
