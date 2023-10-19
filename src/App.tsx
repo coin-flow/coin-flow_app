@@ -1,42 +1,45 @@
-import { DarkMode as DarkModeIcon, LightMode as LightModeIcon } from '@mui/icons-material';
-import { IconButton, ThemeProvider } from '@mui/material';
-import { useState } from 'react';
+import { Box, ThemeProvider, Toolbar, Typography } from '@mui/material';
 import { useRecoilValue } from 'recoil';
 
-import reactLogo from './assets/react.svg';
-import useThemeMode from './hooks/useThemeMode';
+import { AppLayout } from './components';
 import { themeState } from './store';
 import { GlobalStyle, darkTheme, lightTheme } from './styles';
-import viteLogo from '/vite.svg';
 
 const App = () => {
 	const theme = useRecoilValue(themeState);
-	const { handleToggleTheme } = useThemeMode();
-
-	const [count, setCount] = useState(0);
 
 	return (
 		<ThemeProvider theme={theme.isDark ? darkTheme : lightTheme}>
 			<GlobalStyle />
-			<div>
-				<a href="https://vitejs.dev" target="_blank">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://react.dev" target="_blank">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-				<IconButton size="large" color="inherit" onClick={handleToggleTheme}>
-					{theme.isDark ? <LightModeIcon /> : <DarkModeIcon />}
-				</IconButton>
-			</div>
-			<h1>Vite + React</h1>
-			<div className="card">
-				<button onClick={() => setCount(count => count + 1)}>count is {count}</button>
-				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">Click on the Vite and React logos to learn more</p>
+			<AppLayout>
+				<Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+					<Toolbar />
+					<Typography paragraph>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+						incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent
+						elementum facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in
+						hendrerit gravida rutrum quisque non tellus. Convallis convallis tellus id interdum
+						velit laoreet id donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing.
+						Amet nisl suscipit adipiscing bibendum est ultricies integer quis. Cursus euismod quis
+						viverra nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum leo.
+						Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus
+						at augue. At augue eget arcu dictum varius duis at consectetur lorem. Velit sed
+						ullamcorper morbi tincidunt. Lorem donec massa sapien faucibus et molestie ac.
+					</Typography>
+					<Typography paragraph>
+						Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
+						facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
+						tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
+						consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus
+						sed vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in.
+						In hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
+						et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique
+						sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo
+						viverra maecenas accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam
+						ultrices sagittis orci a.
+					</Typography>
+				</Box>
+			</AppLayout>
 		</ThemeProvider>
 	);
 };
