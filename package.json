@@ -1,14 +1,14 @@
 {
-	"name": "coin-flow_app",
+	"name": "coplore_app",
 	"private": true,
 	"version": "0.0.1",
-	"description": "coin flow app repository",
+	"description": "coplore app repository",
 	"author": "chan9yu <wry5533@gmail.com>",
 	"type": "module",
-	"homepage": "https://coin-flow.github.io/coin-flow_app/",
+	"homepage": "https://coplore.com/",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/coin-flow/coin-flow_app/"
+		"url": "https://github.com/coplore/coplore_app"
 	},
 	"lint-staged": {
 		"**/*.{ts,tsx}": [
@@ -32,6 +32,10 @@
 		"prepare:permission": "chmod +x .husky/*"
 	},
 	"dependencies": {
+		"@emotion/react": "^11.11.1",
+		"@emotion/styled": "^11.11.0",
+		"@mui/icons-material": "^5.14.14",
+		"@mui/material": "^5.14.14",
 		"@tanstack/react-query": "^4.36.1",
 		"axios": "^1.5.1",
 		"react": "^18.2.0",
