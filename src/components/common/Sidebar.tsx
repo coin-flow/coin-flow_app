@@ -27,11 +27,7 @@ const Sidebar = () => {
 			<Toolbar />
 			<List component="nav">
 				<NavMenu icon={<HomeIcon />} moveToPath={ROUTER_PATH.HOME} navLabel="홈" />
-				<NavMenu
-					icon={<CurrencyBitcoinIcon />}
-					moveToPath={ROUTER_PATH.COIN}
-					navLabel="코인 리스트"
-				/>
+				<NavMenu icon={<CurrencyBitcoinIcon />} moveToPath={ROUTER_PATH.COIN} navLabel="코인 리스트" />
 				<NavMenu icon={<ManageSearchIcon />} moveToPath={ROUTER_PATH.SEARCH} navLabel="검색" />
 			</List>
 			<Divider />
