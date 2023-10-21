@@ -9,7 +9,13 @@ const AppLayout = () => {
 		<Box sx={{ display: 'flex' }}>
 			<Header />
 			<Sidebar />
-			<Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+			<Box
+				component="main"
+				sx={{
+					flexGrow: 1,
+					padding: 3
+				}}
+			>
 				<Toolbar />
 				<Suspense
 					fallback={

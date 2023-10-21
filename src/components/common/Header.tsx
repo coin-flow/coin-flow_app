@@ -15,9 +15,7 @@ const Header = () => {
 			<Toolbar>
 				<Stack direction="row" justifyContent="space-between" alignItems="center" width="100%">
 					<Logo />
-					<IconButton onClick={handleToggleTheme}>
-						{theme.isDark ? <LightModeIcon /> : <DarkModeIcon />}
-					</IconButton>
+					<IconButton onClick={handleToggleTheme}>{theme.isDark ? <LightModeIcon /> : <DarkModeIcon />}</IconButton>
 				</Stack>
 			</Toolbar>
 		</AppBar>

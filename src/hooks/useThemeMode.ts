@@ -27,7 +27,10 @@ const useThemeMode = () => {
 	const handleToggleTheme = () => {
 		setTheme(prev => {
 			saveTheme(!prev.isDark);
-			return { ...prev, isDark: !prev.isDark };
+			return {
+				...prev,
+				isDark: !prev.isDark
+			};
 		});
 	};
 
