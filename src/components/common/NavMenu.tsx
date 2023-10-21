@@ -1,6 +1,6 @@
 import { ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import { ReactNode } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useMatch, useNavigate } from 'react-router-dom';
 
 import { ROUTER_PATH } from '../../constants';
 
@@ -16,8 +16,8 @@ const NavMenu = (props: NavMenuProps) => {
 	const navigate = useNavigate();
 	const handleMoveToLink = () => navigate(moveToPath);
 
-	const { pathname } = useLocation();
-	const isMenuSelected = pathname === moveToPath;
+	const pathMatch = useMatch(moveToPath);
+	const isMenuSelected = Boolean(pathMatch);
 
 	return (
 		<ListItem disablePadding>
