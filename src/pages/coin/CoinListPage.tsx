@@ -8,7 +8,7 @@ const CoinListPage = () => {
 		<div>
 			<Grid container spacing={2}>
 				{Object.entries(dummyBitcoinInfo).map(([key, value]) => (
-					<Grid key={key} item md={3} sm={6}>
+					<Grid key={key} item lg={3} md={4} sm={6}>
 						<CoinItem price={value.closing_price} title={key} />
 					</Grid>
 				))}

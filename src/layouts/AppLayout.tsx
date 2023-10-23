@@ -1,8 +1,8 @@
-import { Backdrop, Box, CircularProgress, Toolbar } from '@mui/material';
+import { Box, Toolbar } from '@mui/material';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import { Header, Sidebar } from '../components';
+import { Header, LoadingBackdrop, Sidebar } from '../components';
 
 const AppLayout = () => {
 	return (
@@ -17,19 +17,7 @@ const AppLayout = () => {
 				}}
 			>
 				<Toolbar />
-				<Suspense
-					fallback={
-						<Backdrop
-							open
-							sx={{
-								color: '#fff',
-								zIndex: theme => theme.zIndex.drawer + 1
-							}}
-						>
-							<CircularProgress color="inherit" />
-						</Backdrop>
-					}
-				>
+				<Suspense fallback={<LoadingBackdrop />}>
 					<Outlet />
 				</Suspense>
 			</Box>

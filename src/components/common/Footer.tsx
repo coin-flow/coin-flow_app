@@ -13,7 +13,7 @@ const Footer = () => {
 			}}
 		>
 			<Typography variant="body1" sx={{ color: theme => theme.palette.grey[500] }}>
-				&copy;{currentYear} coplore.
+				Copyright &copy; {currentYear} by coplore.
 			</Typography>
 			<Typography variant="body1" sx={{ color: theme => theme.palette.grey[500] }}>
 				All rights reserved.
