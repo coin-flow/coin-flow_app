@@ -1,4 +1,4 @@
-import { RouteObject, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouteObject, RouterProvider, createHashRouter } from 'react-router-dom';
 
 import { ROUTER_PATH } from '../constants';
 import { AppLayout } from '../layouts';
@@ -36,6 +36,6 @@ const rootRouteObject: RouteObject[] = [
 	}
 ];
 
-const RootRouter = () => <RouterProvider router={createBrowserRouter(rootRouteObject)} />;
+const RootRouter = () => <RouterProvider router={createHashRouter(rootRouteObject)} />;
 
 export default RootRouter;
