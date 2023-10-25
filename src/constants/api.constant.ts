@@ -7,5 +7,6 @@ export enum HTTP_METHOD {
 }
 
 export enum API_PATH {
+	BITCOIN = 'bitcoin',
 	TEST = 'test'
 }
