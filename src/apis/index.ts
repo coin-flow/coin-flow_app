@@ -1,1 +1,1 @@
-export * from './test.api';
+export * from './bitcoin.api';

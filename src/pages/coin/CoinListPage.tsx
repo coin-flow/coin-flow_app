@@ -1,15 +1,20 @@
 import { Grid } from '@mui/material';
 
-import { CoinItem } from '../../components';
-import { dummyBitcoinInfo } from '../../data';
+import { CoinItem, LoadingBackdrop } from '../../components';
+import { useBitcoinQuery } from '../../hooks';
 
 const CoinListPage = () => {
-	return (
+	const { data, isLoading } = useBitcoinQuery();
+	const bitcoinList = data?.data;
+
+	return isLoading ? (
+		<LoadingBackdrop />
+	) : (
 		<div>
 			<Grid container spacing={2}>
-				{Object.entries(dummyBitcoinInfo).map(([key, value]) => (
-					<Grid key={key} item lg={3} md={4} sm={6}>
-						<CoinItem price={value.closing_price} title={key} />
+				{bitcoinList?.map(coinInfo => (
+					<Grid key={coinInfo.coin_name} item lg={3} md={4} sm={6}>
+						<CoinItem coinInfo={coinInfo} />
 					</Grid>
 				))}
 			</Grid>
