@@ -36,23 +36,25 @@ const CoinItem = (props: CoinItemProps) => {
 
 	const navigate = useNavigate();
 
-	const coinImg = `https://raw.githubusercontent.com/coplore/coplore_storage/main/bitcoin/${coin_name.toLowerCase()}.png`;
-
 	const handleMoveToCoinDetail = () => {
 		navigate(`${ROUTER_PATH.COIN}/${coin_name}`);
 	};
+
+	const coinImg = `https://raw.githubusercontent.com/coplore/coplore_storage/main/bitcoin/${coin_name.toLowerCase()}.png`;
 
 	return (
 		<Card variant="outlined">
 			<CardHeader
 				avatar={<Avatar src={coinImg} alt={coin_name} />}
 				action={
-					<Button variant="outlined" onClick={handleMoveToCoinDetail}>
+					<Button color="inherit" onClick={handleMoveToCoinDetail}>
 						상세보기
 					</Button>
 				}
 				title={coin_name}
+				titleTypographyProps={{ color: 'primary', fontWeight: '700', fontSize: '18px' }}
 				subheader={coin_name}
+				subheaderTypographyProps={{ color: 'gray', fontWeight: '400', fontSize: '12px' }}
 			/>
 			<CardContent>
 				<List disablePadding>
@@ -63,13 +65,13 @@ const CoinItem = (props: CoinItemProps) => {
 							primary="최근 변동률 (24H)"
 							secondary={`${fluctate_rate_24H}%`}
 							secondaryTypographyProps={{
-								color: ({ palette }) => (Number(fluctate_rate_24H) >= 0 ? palette.info.main : palette.error.main)
+								color: theme => (Number(fluctate_rate_24H) >= 0 ? theme.palette.info.main : theme.palette.error.main)
 							}}
 						/>
 					</ListItem>
 					<ListItem disablePadding>
-						<ListItemText sx={{ width: '50%' }} primary="금일 최고가" secondary={`${formatPrice(max_price)}`} />
-						<ListItemText sx={{ width: '50%' }} primary="금일 최저가" secondary={`${formatPrice(min_price)}`} />
+						<ListItemText sx={{ width: '50%' }} primary="금일 최고가(KRW)" secondary={`${formatPrice(max_price)}`} />
+						<ListItemText sx={{ width: '50%' }} primary="금일 최저가(KRW)" secondary={`${formatPrice(min_price)}`} />
 					</ListItem>
 				</List>
 			</CardContent>
