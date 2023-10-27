@@ -2,9 +2,9 @@ name: Deploy static content to Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ['main']
   pull_request:
-    branches: ["main"]
+    branches: ['main']
 
 permissions:
   contents: write
@@ -22,10 +22,17 @@ jobs:
       - name: Use Node.js 💾
         uses: actions/setup-node@v3
         with:
-          node-version-file: ".nvmrc"
-          cache: "pnpm"
-      - name: Install Dependencies And Build 🔧
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+      - name: Install Dependencies 💾
         run: pnpm install --frozen-lockfile && pnpm build
+      - name: Debug Secrets
+        run: echo "VITE_API_URL=${{ secrets.VITE_API_URL }}"
+      - name: Set environment variables ⚙️
+        run: |
+          echo "VITE_API_URL=${{ secrets.VITE_API_URL }}" >> $GITHUB_ENV
+      - name: Build 🔧
+        run: pnpm build
       - name: Deploy with gh-pages 📦
         run: |
           git config --global user.email "wry5533@gmail.com"
