@@ -8,7 +8,14 @@ const Logo = () => {
 	const handleMoveToHome = () => navigate(ROUTER_PATH.HOME);
 
 	return (
-		<Typography variant="h5" component="div" onClick={handleMoveToHome} sx={{ cursor: 'pointer' }}>
+		<Typography
+			variant="h5"
+			component="div"
+			color="primary"
+			fontWeight={700}
+			sx={{ cursor: 'pointer' }}
+			onClick={handleMoveToHome}
+		>
 			coplore
 		</Typography>
 	);
