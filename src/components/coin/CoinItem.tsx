@@ -40,7 +40,7 @@ const CoinItem = (props: CoinItemProps) => {
 		navigate(`${ROUTER_PATH.COIN}/${coin_name}`);
 	};
 
-	const coinImg = `https://raw.githubusercontent.com/coplore/coplore_storage/main/bitcoin/${coin_name.toLowerCase()}.png`;
+	const coinImg = `https://coplore-icon-api.vercel.app/api/icons/${coin_name.toLowerCase()}`;
 
 	return (
 		<Card variant="outlined">
