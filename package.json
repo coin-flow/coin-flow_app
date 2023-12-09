@@ -1,12 +1,12 @@
 {
-	"name": "nextjs_boiler_plate",
+	"name": "coplore_app",
 	"private": true,
 	"version": "0.1.0",
-	"description": "nextjs boiler plate repository",
+	"description": "₿ 코플러(coplore) app",
 	"author": "chan9yu <wry5533@gmail.com>",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/chan9yu/nextjs_boiler_plate"
+		"url": "https://github.com/coplore/coplore_app"
 	},
 	"lint-staged": {
 		"**/*.{ts,tsx}": [
@@ -22,7 +22,7 @@
 	"scripts": {
 		"dev": "next dev -p 8080",
 		"build": "next build",
-		"start": "next start -p 8080",
+		"start": "next start -p 80",
 		"lint": "next lint",
 		"commit": "pnpm git-cz",
 		"prepare": "husky install",
