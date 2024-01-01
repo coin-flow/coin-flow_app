@@ -1,7 +1,6 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
-
-import type { ChildrenProps } from '../@types/common';
+import type { PropsWithChildren } from 'react';
 
 const openSans = Open_Sans({ subsets: ['latin'] });
 
@@ -18,7 +17,7 @@ export const metadata: Metadata = {
 	]
 };
 
-export default function RootLayout({ children }: ChildrenProps) {
+export default function RootLayout({ children }: PropsWithChildren) {
 	return (
 		<html lang="ko">
 			<body className={openSans.className}>{children}</body>
