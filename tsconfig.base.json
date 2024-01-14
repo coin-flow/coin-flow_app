@@ -17,9 +17,9 @@
 		/* Emit */
 		"declaration": false,
 		"sourceMap": true,
-    "noEmit": true,
+		"noEmit": true,
 
-    /* Interop Constraints */
+		/* Interop Constraints */
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 
@@ -33,5 +33,5 @@
 
 		/* Completeness */
 		"skipLibCheck": true
-	},
+	}
 }
