@@ -1,3 +1,3 @@
 export default function NoticePage() {
-	return <div>NoticePage</div>;
+	return <div className="min-h-dvh">NoticePage</div>;
 }

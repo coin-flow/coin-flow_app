@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
 import type { PropsWithChildren } from 'react';
 
-import Navbar from '../components/layout/Navbar';
+import Header from '../components/layout/Header';
 import '../styles/global.css';
 
 const openSans = Open_Sans({ subsets: ['latin'] });
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren) {
 	return (
-		<html lang="ko">
-			<body className={openSans.className}>
-				<Navbar />
+		<html lang="ko" data-theme="light">
+			<body className={`${openSans.className} bg-zinc-100`}>
+				<Header />
 				<main>{children}</main>
 			</body>
 		</html>

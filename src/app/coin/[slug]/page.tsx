@@ -1,3 +1,3 @@
 export default function CoinDetailPage() {
-	return <div>CoinDetailPage</div>;
+	return <div className="min-h-dvh">CoinDetailPage</div>;
 }
