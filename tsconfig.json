@@ -2,6 +2,7 @@
 	"extends": "./tsconfig.base.json",
 	"compilerOptions": {
 		/** Bundler Options */
+		"moduleResolution": "bundler",
 		"isolatedModules": true,
 		"jsx": "preserve",
 		"incremental": true,
