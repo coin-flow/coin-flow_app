@@ -3,6 +3,7 @@ import { Open_Sans } from 'next/font/google';
 import type { PropsWithChildren } from 'react';
 
 import Navbar from '../components/layout/Navbar';
+import '../styles/global.css';
 
 const openSans = Open_Sans({ subsets: ['latin'] });
 
