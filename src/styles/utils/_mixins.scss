@@ -1,0 +1,41 @@
+/**
+ * 정의된 breakpoint를 이용해 min-width(최소 너비) 미디어 쿼리 생성
+ *
+ * - 사용 방법: @include media-breakpoint-up(md) { ... }
+ * - 컴파일 후: @media (min-width: 768px) { ... }
+ */
+@mixin media-breakpoint-up($name, $breakpoints: $breakpoints) {
+	$min: breakpoint-min(breakpoint-#{$name}, $breakpoints);
+
+	@if $min {
+		@media (min-width: $min) {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
+
+/**
+ * 정의된 breakpoint를 이용해 max-width(최대 너비) 미디어 쿼리 생성
+ *
+ * - 사용 방법: @include media-breakpoint-down(md) { ... }
+ * - 컴파일 후: @media (max-width: 768px) { ... }
+ */
+@mixin media-breakpoint-down($name, $breakpoints: $breakpoints) {
+	$max: breakpoint-max(breakpoint-#{$name}, $breakpoints);
+
+	@if $max {
+		@media (max-width: $max) {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
+
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

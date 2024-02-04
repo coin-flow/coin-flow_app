@@ -1,0 +1,77 @@
+/* 색상 맵을 기반으로 CSS 변수을 생성하는 mixin */
+@mixin defineVariable($variableMap) {
+	@each $key, $value in $variableMap {
+		--#{$prefix}#{$key}: #{$value};
+	}
+}
+
+:root {
+	// [data-theme='light'] {
+	/* ====== blur variable ====== */
+	@include defineVariable($blurs);
+
+	/* ====== border variable ====== */
+	@include defineVariable($borders);
+
+	/* ====== breakpoint variable ====== */
+	@include defineVariable($breakpoints);
+
+	/* ====== color variable ====== */
+	@include defineVariable($monochrome-colors);
+	@include defineVariable($grey-colors);
+	@include defineVariable($white-opacity-colors);
+	@include defineVariable($black-opacity-colors);
+	@include defineVariable($grey-opacity-colors);
+	@include defineVariable($red-colors);
+	@include defineVariable($pink-colors);
+	@include defineVariable($purple-colors);
+	@include defineVariable($deep-purple-colors);
+	@include defineVariable($indigo-colors);
+	@include defineVariable($blue-colors);
+	@include defineVariable($light-blue-colors);
+	@include defineVariable($cyan-colors);
+	@include defineVariable($teal-colors);
+	@include defineVariable($green-colors);
+	@include defineVariable($light-green-colors);
+	@include defineVariable($lime-colors);
+	@include defineVariable($yellow-colors);
+	@include defineVariable($amber-colors);
+	@include defineVariable($orange-colors);
+	@include defineVariable($deep-orange-colors);
+	@include defineVariable($brown-colors);
+	@include defineVariable($primary-colors);
+	@include defineVariable($secondary-colors);
+	@include defineVariable($info-colors);
+	@include defineVariable($success-colors);
+	@include defineVariable($warning-colors);
+	@include defineVariable($error-colors);
+
+	/* ====== radius variable ====== */
+	@include defineVariable($radii);
+
+	/* ====== shadow variable ====== */
+	@include defineVariable($shadows);
+
+	/* ====== size variable ====== */
+	@include defineVariable($sizes);
+	@include defineVariable($container-sizes);
+
+	/* ====== spacing variable ====== */
+	@include defineVariable($spacings);
+
+	/* ====== transition variable ====== */
+	@include defineVariable($transition-durations);
+
+	/* ====== typography variable ====== */
+	@include defineVariable($font-sizes);
+	@include defineVariable($font-weights);
+	@include defineVariable($letter-spacings);
+	@include defineVariable($line-heights);
+	@include defineVariable($font-families);
+	@include media-breakpoint-down('md') {
+		@include defineVariable($mobile-font-sizes);
+	}
+
+	/* ====== z-index variable ====== */
+	@include defineVariable($z-indeices);
+}

@@ -1,0 +1,101 @@
+$varibale-prefix: 'coplore-' !default;
+$prefix: $varibale-prefix !default;
+
+/* ===== Global CSS Variable ===== */
+$color-shades: ('50', '100', '200', '300', '400', '500', '600', '700', '800', '900') !default;
+
+$opacity-shades: ('10', '20', '30', '40', '50', '60', '70', '80', '90', '95', '100') !default;
+
+$size-list: (
+	'1',
+	'2',
+	'3',
+	'4',
+	'5',
+	'6',
+	'7',
+	'8',
+	'9',
+	'10',
+	'12',
+	'14',
+	'16',
+	'20',
+	'24',
+	'28',
+	'32',
+	'36',
+	'40',
+	'44',
+	'48',
+	'52',
+	'56',
+	'60',
+	'64',
+	'72',
+	'80',
+	'96',
+	'xs',
+	'sm',
+	'md',
+	'lg',
+	'xl',
+	'full'
+) !default;
+
+$spacing-list: ('0', '25', '50', '75', '100', '150', '200', '250', '300', '400', '500', '600', '800', '1000') !default;
+
+$z-index-list: (
+	'hide',
+	'auto',
+	'base',
+	'docked',
+	'dropdown',
+	'sticky',
+	'banner',
+	'overlay',
+	'modal',
+	'popover',
+	'toast',
+	'tooltip'
+) !default;
+/* ===== Global CSS Variable End ===== */
+
+/* ===== CSS Attribute ===== */
+$cursor-types: (
+	'auto',
+	'default',
+	'pointer',
+	'crosshair',
+	'text',
+	'wait',
+	'help',
+	'progress',
+	'zoom-in',
+	'zoom-out',
+	'not-allowed',
+	'context-menu',
+	'move',
+	'copy'
+) !default;
+
+$display-types: (
+	'block',
+	'inline-block',
+	'table',
+	'list-item',
+	'flex',
+	'grid',
+	'inline',
+	'inline-block',
+	'none',
+	'inherit',
+	'initial',
+	'contents',
+	'flow-root'
+) !default;
+
+$pointer-events-types: ('none', 'auto', 'visible', 'painted') !default;
+
+$position-types: ('static', 'relative', 'absolute', 'fixed', 'sticky') !default;
+/* ===== CSS Attribute End ===== */

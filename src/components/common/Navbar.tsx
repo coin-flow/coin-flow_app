@@ -3,7 +3,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import Logo from '../common/Logo';
+import Logo from './Logo';
+import Button from '../ui/Button';
 
 const links = [
 	{ id: '1', label: '암호화폐', href: '/coin' },
@@ -35,8 +36,10 @@ export default function Navbar() {
 					</ul>
 				</div>
 				<div className="flex items-center gap-2">
-					<button className="btn btn-sm btn-ghost">로그인</button>
-					<button className="btn btn-sm btn-primary">회원가입</button>
+					<Button size="sm" color="ghost">
+						로그인
+					</Button>
+					<Button size="sm">회원가입</Button>
 				</div>
 			</nav>
 		</div>

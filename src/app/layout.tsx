@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
 import type { PropsWithChildren } from 'react';
 
-import Header from '../components/layout/Header';
-import '../styles/global.css';
+import Header from '../components/common/Header';
+import '../styles/global.scss';
 
 const openSans = Open_Sans({ subsets: ['latin'] });
 

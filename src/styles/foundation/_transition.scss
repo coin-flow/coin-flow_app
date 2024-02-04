@@ -1,0 +1,9 @@
+$transition-durations: (
+	'transition-duration-ultra-fast': '50ms',
+	'transition-duration-faster': '100ms',
+	'transition-duration-fast': '150ms',
+	'transition-duration-normal': '200ms',
+	'transition-duration-slow': '300ms',
+	'transition-duration-slower': '400ms',
+	'transition-duration-ultra-slow': '500ms'
+) !default;
