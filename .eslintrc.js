@@ -23,24 +23,14 @@ module.exports = {
 		'plugin:react-hooks/recommended',
 		'plugin:@typescript-eslint/recommended'
 	],
-	plugins: [
-		'react', //
-		'react-hooks',
-		'jsx-a11y',
-		'@typescript-eslint'
-	],
+	plugins: ['react', 'react-hooks', 'jsx-a11y', '@typescript-eslint'],
 	settings: {
 		react: {
 			version: 'detect'
 		},
 		'import/resolver': {
 			node: {
-				extensions: [
-					'.js', //
-					'.jsx',
-					'.ts',
-					'.tsx'
-				]
+				extensions: ['.js', '.jsx', '.ts', '.tsx']
 			}
 		}
 	},
