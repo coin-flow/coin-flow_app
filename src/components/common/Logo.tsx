@@ -1,10 +1,11 @@
 import LogoIcon from '../icons/LogoIcon';
+import styles from './Logo.module.scss';
 
 export default function Logo() {
 	return (
-		<div className="flex items-center gap-2">
+		<div className={styles.container}>
 			<LogoIcon />
-			<span className="text-2xl text-black">Coplore</span>
+			<span className={styles.text}>Coplore</span>
 		</div>
 	);
 }

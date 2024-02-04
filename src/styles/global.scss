@@ -22,3 +22,16 @@
 
 /* components */
 @import 'components/button';
+
+body {
+	background-color: var(--coplore-grey-50);
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+* {
+	box-sizing: border-box;
+}

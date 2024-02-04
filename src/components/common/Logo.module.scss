@@ -1,0 +1,11 @@
+.container {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem; /* 8px */
+}
+
+.text {
+	font-size: 1.5rem; /* 24px */
+	line-height: 2rem; /* 32px */
+	color: var(--coplore-black);
+}

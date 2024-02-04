@@ -3,8 +3,9 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import Logo from './Logo';
 import Button from '../ui/Button';
+import Logo from './Logo';
+import styles from './Navbar.module.scss';
 
 const links = [
 	{ id: '1', label: '암호화폐', href: '/coin' },
@@ -16,26 +17,21 @@ export default function Navbar() {
 	const currentPath = usePathname();
 
 	return (
-		<div className="w-full h-[60px] border-b border-zinc-200">
-			<nav className="w-full max-w-[1440px] mx-auto p-3 flex justify-between">
-				<div className="flex items-center">
+		<div className={styles.container}>
+			<nav className={styles.wrapper}>
+				<div className={styles.left}>
 					<Link href="/">
 						<Logo />
 					</Link>
-					<ul className="flex items-center pl-4">
+					<ul className={styles.menus}>
 						{links.map(link => (
-							<li
-								key={link.id}
-								className={`${
-									link.href === currentPath ? 'text-zinc-900' : 'text-zinc-500'
-								} hover:text-zinc-800 transition-colors text-sm px-4`}
-							>
+							<li key={link.id} className={`${styles.menu} ${link.href === currentPath && styles['menu--active']}`}>
 								<Link href={link.href}>{link.label}</Link>
 							</li>
 						))}
 					</ul>
 				</div>
-				<div className="flex items-center gap-2">
+				<div className={styles.right}>
 					<Button size="sm" color="ghost">
 						로그인
 					</Button>

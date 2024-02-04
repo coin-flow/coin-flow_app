@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
 	return (
 		<html lang="ko" data-theme="light">
-			<body className={`${openSans.className} bg-zinc-100`}>
+			<body className={openSans.className}>
 				<Header />
 				<main>{children}</main>
 			</body>

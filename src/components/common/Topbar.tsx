@@ -1,3 +1,5 @@
+import styles from './Topbar.module.scss';
+
 const dummy = [
 	{ id: '1', label: '시가총액', value: '₩1,598,367,603,477,908' },
 	{ id: '2', label: '24시간 거래량', value: '₩1,598,367,603,477,908' },
@@ -8,12 +10,12 @@ const dummy = [
 
 export default function Topbar() {
 	return (
-		<div className="w-full h-[40px] border-b border-zinc-200">
-			<div className="w-full max-w-[1440px] flex gap-6 items-center p-3 mx-auto">
+		<div className={styles.container}>
+			<div className={styles.wrapper}>
 				{dummy.map(({ id, label, value }) => (
-					<div key={id} className="flex gap-1 items-center">
-						<span className="text-zinc-500 text-xs">{label}</span>
-						<span className="text-violet-500 text-xs">{value}</span>
+					<div key={id} className={styles.item}>
+						<span className={`${styles.text} ${styles['text--grey']}`}>{label}</span>
+						<span className={`${styles.text} ${styles['text--primary']}`}>{value}</span>
 					</div>
 				))}
 			</div>
