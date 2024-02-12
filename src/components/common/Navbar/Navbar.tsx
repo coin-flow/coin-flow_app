@@ -3,9 +3,9 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import Button from '../ui/Button';
-import Logo from './Logo';
-import styles from './Navbar.module.scss';
+import Button from '../../ui/Button';
+import Logo from '../Logo/Logo';
+import { container, left, menuVariant, menus, right, wrapper } from './Navbar.css';
 
 const links = [
 	{ id: '1', label: '암호화폐', href: '/coin' },
@@ -17,21 +17,21 @@ export default function Navbar() {
 	const currentPath = usePathname();
 
 	return (
-		<div className={styles.container}>
-			<nav className={styles.wrapper}>
-				<div className={styles.left}>
+		<div className={container}>
+			<nav className={wrapper}>
+				<div className={left}>
 					<Link href="/">
 						<Logo />
 					</Link>
-					<ul className={styles.menus}>
+					<ul className={menus}>
 						{links.map(link => (
-							<li key={link.id} className={`${styles.menu} ${link.href === currentPath && styles['menu--active']}`}>
+							<li key={link.id} className={link.href === currentPath ? menuVariant.active : menuVariant.normal}>
 								<Link href={link.href}>{link.label}</Link>
 							</li>
 						))}
 					</ul>
 				</div>
-				<div className={styles.right}>
+				<div className={right}>
 					<Button size="sm" color="ghost">
 						로그인
 					</Button>

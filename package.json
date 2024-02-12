@@ -30,6 +30,7 @@
 		"husky:permission": "chmod +x .husky/*"
 	},
 	"dependencies": {
+		"@vanilla-extract/css": "^1.14.1",
 		"classnames": "^2.5.1",
 		"next": "14.0.3",
 		"react": "^18.2.0",
@@ -43,6 +44,7 @@
 		"@types/react-dom": "^18.2.18",
 		"@typescript-eslint/eslint-plugin": "^6.12.0",
 		"@typescript-eslint/parser": "^6.12.0",
+		"@vanilla-extract/next-plugin": "^2.3.6",
 		"commitizen": "^4.3.0",
 		"cz-customizable": "6.3.0",
 		"eslint": "^8.0.0",

@@ -1,4 +1,4 @@
-import styles from './Topbar.module.scss';
+import { container, item, textVariant, wrapper } from './Topbar.css';
 
 const dummy = [
 	{ id: '1', label: '시가총액', value: '₩1,598,367,603,477,908' },
@@ -10,12 +10,12 @@ const dummy = [
 
 export default function Topbar() {
 	return (
-		<div className={styles.container}>
-			<div className={styles.wrapper}>
+		<div className={container}>
+			<div className={wrapper}>
 				{dummy.map(({ id, label, value }) => (
-					<div key={id} className={styles.item}>
-						<span className={`${styles.text} ${styles['text--grey']}`}>{label}</span>
-						<span className={`${styles.text} ${styles['text--primary']}`}>{value}</span>
+					<div key={id} className={item}>
+						<span className={textVariant.grey}>{label}</span>
+						<span className={textVariant.primary}>{value}</span>
 					</div>
 				))}
 			</div>
