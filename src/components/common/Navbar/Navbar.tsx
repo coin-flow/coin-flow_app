@@ -10,7 +10,8 @@ import { container, left, menuVariant, menus, right, wrapper } from './Navbar.cs
 const links = [
 	{ id: '1', label: '암호화폐', href: '/coin' },
 	{ id: '2', label: '공지사항', href: '/notice' },
-	{ id: '3', label: '커뮤니티', href: '/community' }
+	{ id: '3', label: '커뮤니티', href: '/community' },
+	{ id: '4', label: '검색(Beta)', href: '/search' }
 ];
 
 export default function Navbar() {
