@@ -1,16 +1,17 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useQuery } from '@tanstack/react-query';
-import { getData } from '../libs/fetcher';
+import { testFetcher } from '../libs/Fetcher';
 
 export function useGetTest() {
 	return useQuery({
 		queryKey: ['test'],
-		queryFn: () => getData('https://jsonplaceholder.typicode.com/users')
+		queryFn: () => testFetcher.get<any>('/users')
 	});
 }
 
 export function useGetTest2() {
 	return useQuery({
 		queryKey: ['test2'],
-		queryFn: () => getData('https://jsonplaceholder.typicode.com/posts')
+		queryFn: () => testFetcher.get<any>('/posts')
 	});
 }

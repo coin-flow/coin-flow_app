@@ -1,14 +1,14 @@
 import { HydrationBoundary, QueryClient, dehydrate } from '@tanstack/react-query';
 
 import Test from '../components/home/Test';
-import { getData } from '../libs/fetcher';
+import { testFetcher } from '../libs/Fetcher';
 
 export default async function HomePage() {
 	const queryClient = new QueryClient();
 
 	await queryClient.prefetchQuery({
 		queryKey: ['test'],
-		queryFn: () => getData('https://jsonplaceholder.typicode.com/users')
+		queryFn: () => testFetcher.get('/users')
 	});
 
 	return (

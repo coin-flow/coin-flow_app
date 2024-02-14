@@ -1,32 +1,69 @@
-export async function getData(url = '') {
-	const response = await fetch(url, {
-		method: 'GET',
-		mode: 'cors',
-		cache: 'no-cache',
-		credentials: 'same-origin',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		redirect: 'follow',
-		referrerPolicy: 'no-referrer'
-	});
-
-	return response.json();
+export enum METHOD {
+	GET = 'GET',
+	POST = 'POST',
+	PUT = 'PUT',
+	DELETE = 'DELETE'
 }
 
-export async function postData(url = '', data = {}) {
-	const response = await fetch(url, {
-		method: 'POST',
-		mode: 'cors',
-		cache: 'no-cache',
-		credentials: 'same-origin',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		redirect: 'follow',
-		referrerPolicy: 'no-referrer',
-		body: JSON.stringify(data)
-	});
+export class Fetcher {
+	constructor(private baseUrl: string) {}
 
-	return response.json();
+	public async get<T>(url: string): Promise<T> {
+		const response = await fetch(`${this.baseUrl}${url}`, {
+			method: METHOD.GET
+		});
+
+		if (!response.ok) {
+			throw new Error('Failed to fetch data');
+		}
+
+		return response.json();
+	}
+
+	async post<T>(url: string, data: object): Promise<T> {
+		const response = await fetch(`${this.baseUrl}${url}`, {
+			method: METHOD.POST,
+			body: JSON.stringify(data),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		});
+
+		if (!response.ok) {
+			throw new Error('Failed to fetch data');
+		}
+
+		return response.json();
+	}
+
+	public async put<T>(url: string, data: object): Promise<T> {
+		const response = await fetch(`${this.baseUrl}${url}`, {
+			method: METHOD.PUT,
+			body: JSON.stringify(data),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		});
+
+		if (!response.ok) {
+			throw new Error('Failed to fetch data');
+		}
+
+		return response.json();
+	}
+
+	async delete<T>(url: string): Promise<T> {
+		const response = await fetch(`${this.baseUrl}${url}`, {
+			method: METHOD.DELETE
+		});
+
+		if (!response.ok) {
+			throw new Error('Failed to fetch data');
+		}
+
+		return response.json();
+	}
 }
+
+export const testFetcher = new Fetcher('https://jsonplaceholder.typicode.com');
+export const coploreFetcher = new Fetcher(process.env.NEXT_PUBLIC_API_URL);
