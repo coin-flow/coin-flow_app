@@ -1,10 +1,12 @@
 'use client';
 
+import { useMutation } from '@tanstack/react-query';
 import { useState } from 'react';
 
-import { SEARCH_DUMMY_DATA } from '../../constants';
-import { postData } from '../../libs/fetcher';
+import { SEARCH_DUMMY_DATA } from '../../constants/dummy';
+import { coploreFetcher } from '../../libs/Fetcher';
 import {
+	SearchBody,
 	initialDisparity,
 	initialMacd,
 	initialMasp,
@@ -26,6 +28,7 @@ import Price from './Price';
 import TransAction from './TransAction';
 import Trends from './Trends';
 import { buttonGroup, container, responseBox, wrapper } from './search.css';
+import { QUERY_KEY } from '../../constants/queryKey';
 
 export default function SearchForm() {
 	const [price, setPrice] = useState<PriceType>(initialPrice);
@@ -34,24 +37,16 @@ export default function SearchForm() {
 	const [trends, setTrends] = useState<TrendsType>(initialTrends);
 	const [disparity, setDisparity] = useState<DisparityType>(initialDisparity);
 	const [macd, setMacd] = useState<MacdType>(initialMacd);
-	const [loading, setLoading] = useState(false);
-	const [response, setResponse] = useState(null);
 
-	/** @TODO 테스트용 API 수정 필요 */
+	const { mutate, data, isPending } = useMutation({
+		mutationKey: [QUERY_KEY.SEARCH],
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		mutationFn: (data: SearchBody) => coploreFetcher.post<any>('/search/search', data)
+	});
+
 	const handleSearch = (isDummy?: boolean) => async () => {
-		if (loading) return;
-		setLoading(true);
-		setResponse(null);
-		const bodyData = isDummy ? SEARCH_DUMMY_DATA : { price, transaction, masp, trends, disparity, macd };
-
-		try {
-			const response = await postData(`${process.env.NEXT_PUBLIC_API_URL}/search/search`, bodyData);
-			setResponse(response);
-		} catch (error) {
-			console.error('>>> search error:', error);
-		} finally {
-			setLoading(false);
-		}
+		const data = (isDummy ? SEARCH_DUMMY_DATA : { price, transaction, masp, trends, disparity, macd }) as SearchBody;
+		mutate(data);
 	};
 
 	return (
@@ -73,11 +68,11 @@ export default function SearchForm() {
 					Input Search
 				</Button>
 			</div>
-			{loading && <>Loading...</>}
-			{response && (
+			{isPending && <>Loading...</>}
+			{data && (
 				<>
 					<span>response test</span>
-					<div className={responseBox}>{JSON.stringify(response)}</div>
+					<div className={responseBox}>{JSON.stringify(data)}</div>
 				</>
 			)}
 		</div>
