@@ -30,6 +30,8 @@
 		"husky:permission": "chmod +x .husky/*"
 	},
 	"dependencies": {
+		"@tanstack/react-query": "^5.20.5",
+		"@tanstack/react-query-devtools": "^5.20.5",
 		"@vanilla-extract/css": "^1.14.1",
 		"classnames": "^2.5.1",
 		"next": "14.0.3",

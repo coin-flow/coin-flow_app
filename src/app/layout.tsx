@@ -3,6 +3,7 @@ import { Open_Sans } from 'next/font/google';
 import type { PropsWithChildren } from 'react';
 
 import Header from '../components/common/Header';
+import QueryProvider from '../contexts/QueryProvider';
 import '../styles/global.scss';
 
 const openSans = Open_Sans({ subsets: ['latin'] });
@@ -25,7 +26,9 @@ export default function RootLayout({ children }: PropsWithChildren) {
 		<html lang="ko" data-theme="light">
 			<body className={openSans.className}>
 				<Header />
-				<main>{children}</main>
+				<main>
+					<QueryProvider>{children}</QueryProvider>
+				</main>
 			</body>
 		</html>
 	);
