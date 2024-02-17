@@ -65,5 +65,4 @@ export class Fetcher {
 	}
 }
 
-export const testFetcher = new Fetcher('https://jsonplaceholder.typicode.com');
 export const coploreFetcher = new Fetcher(process.env.NEXT_PUBLIC_API_URL);

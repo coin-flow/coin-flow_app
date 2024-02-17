@@ -6,5 +6,6 @@ export const container = style({
 	position: 'sticky',
 	top: '-40px',
 	backdropFilter: 'blur(var(--coplore-blur-sm))',
-	backgroundColor: 'var(--coplore-white-opacity-60)'
+	backgroundColor: 'var(--coplore-white-opacity-60)',
+	zIndex: '100'
 });

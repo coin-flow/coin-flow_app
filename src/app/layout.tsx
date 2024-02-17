@@ -5,6 +5,7 @@ import type { PropsWithChildren } from 'react';
 import Header from '../components/common/Header';
 import QueryProvider from '../contexts/QueryProvider';
 import '../styles/global.scss';
+import { container } from './layout.css';
 
 const openSans = Open_Sans({ subsets: ['latin'] });
 
@@ -26,7 +27,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
 		<html lang="ko" data-theme="light">
 			<body className={openSans.className}>
 				<Header />
-				<main>
+				<main className={container}>
 					<QueryProvider>{children}</QueryProvider>
 				</main>
 			</body>
