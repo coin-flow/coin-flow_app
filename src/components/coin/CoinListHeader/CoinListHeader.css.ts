@@ -1,11 +1,10 @@
-import { style } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 
 export const container = style({
 	width: '100%',
 	position: 'sticky',
 	top: '60px',
 	backgroundColor: '#f9f9f9',
-	opacity: '80%',
 	zIndex: '100',
 	backdropFilter: 'blur(var(--coplore-blur-sm))',
 	display: 'flex',
@@ -44,5 +43,25 @@ export const headerList = style({
 export const headerItem = style({
 	flex: '1',
 	paddingInline: '12px',
-	color: '#777777'
+	color: '#777777',
+	display: 'flex',
+	alignItems: 'center'
+});
+
+export const iconGroup = style({
+	position: 'relative'
+});
+
+const sortIconBase = style({
+	position: 'absolute'
+});
+
+export const sortIcon = styleVariants({
+	up: [
+		sortIconBase,
+		{
+			top: '0px'
+		}
+	],
+	down: [sortIconBase, {}]
 });

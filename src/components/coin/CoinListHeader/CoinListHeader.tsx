@@ -1,5 +1,17 @@
 import Button from '../../ui/Button';
-import { buttonGroup, container, headerItem, headerList, input, topWrapper } from './CoinListHeader.css';
+import {
+	buttonGroup,
+	container,
+	headerItem,
+	headerList,
+	iconGroup,
+	input,
+	sortIcon,
+	topWrapper
+} from './CoinListHeader.css';
+import arrow_drop_down from '../../../assets/svgs/arrow_drop_down.svg';
+import arrow_drop_up from '../../../assets/svgs/arrow_drop_up.svg';
+import Image from 'next/image';
 
 export default function CoinListHeader() {
 	return (
@@ -14,7 +26,13 @@ export default function CoinListHeader() {
 				<input className={input} type="text" placeholder="이름 또는 심볼명으로 검색" />
 			</div>
 			<ul className={headerList}>
-				<li className={headerItem}>이름</li>
+				<li className={headerItem}>
+					<div>이름</div>
+					<div className={iconGroup}>
+						<Image className={sortIcon.up} src={arrow_drop_up} alt="arrow_drop_up" />
+						<Image className={sortIcon.down} src={arrow_drop_down} alt="arrow_drop_down" />
+					</div>
+				</li>
 				<li className={headerItem}>현재가</li>
 				<li className={headerItem}>변동률 (7d)</li>
 				<li className={headerItem}>시가총액</li>

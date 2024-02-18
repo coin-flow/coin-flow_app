@@ -5,7 +5,6 @@ export const container = style({
 	flexDirection: 'column',
 	position: 'sticky',
 	top: '-40px',
-	backdropFilter: 'blur(var(--coplore-blur-sm))',
-	backgroundColor: 'var(--coplore-white-opacity-60)',
+	backgroundColor: 'var(--coplore-white)',
 	zIndex: '100'
 });
