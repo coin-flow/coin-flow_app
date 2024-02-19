@@ -26,16 +26,12 @@ export default function CoinListHeader() {
 				<input className={input} type="text" placeholder="이름 또는 심볼명으로 검색" />
 			</div>
 			<ul className={headerList}>
-				<li className={headerItem}>
-					<div>이름</div>
-					<div className={iconGroup}>
-						<Image className={sortIcon.up} src={arrow_drop_up} alt="arrow_drop_up" />
-						<Image className={sortIcon.down} src={arrow_drop_down} alt="arrow_drop_down" />
-					</div>
-				</li>
-				<li className={headerItem}>현재가</li>
-				<li className={headerItem}>변동률 (7d)</li>
-				<li className={headerItem}>시가총액</li>
+				<li className={headerItem}>이름</li>
+				<li className={headerItem}>변동금액 (24H)</li>
+				<li className={headerItem}>변동률 (24H)</li>
+				<li className={headerItem}>종가</li>
+				<li className={headerItem}>거래량</li>
+				<li className={headerItem}>거래대금</li>
 			</ul>
 		</div>
 	);

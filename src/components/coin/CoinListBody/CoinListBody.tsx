@@ -9,11 +9,7 @@ export default function CoinListBody() {
 
 	return (
 		<table className={container}>
-			<tbody>
-				{bitcoinList?.map(([simbol, name, currentPrice]) => (
-					<CoinItem key={simbol} currentPrice={currentPrice} name={name} simbol={simbol} />
-				))}
-			</tbody>
+			<tbody>{bitcoinList?.map(bitcoin => <CoinItem key={bitcoin.coin_symbol} bitcoin={bitcoin} />)}</tbody>
 		</table>
 	);
 }
