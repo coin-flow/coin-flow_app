@@ -1,6 +1,6 @@
 'use client';
 
-import { useGetBitcoinList } from '../../../hooks/queries/useCoinQuery';
+import { useGetBitcoinList } from '../../../state/queries/useCoinQuery';
 import CoinItem from '../CoinItem';
 import { container } from './CoinListBody.css';
 
